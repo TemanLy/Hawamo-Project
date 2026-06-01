@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Memastikan tampilan responsif di semua perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hawamo Coffee - Kopi Khas Jambi, Hangat dan Bermakna" />
+    <title>Hawamo Coffee | Jambi</title>
+
+    <!-- Google Fonts: Playfair Display untuk heading elegan, DM Sans untuk body bersih -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Satu-satunya file CSS global untuk semua halaman -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="page-home">
+
+    <!-- =============================================
+         NAVBAR: Navigasi utama yang sticky di atas
+         ============================================= -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner container">
+
+        <!-- Logo teks dengan aksen titik berwarna kopi -->
+        <a href="index.html" class="navbar__logo" aria-label="Hawamo Coffee Beranda">
+          Hawamo<span class="logo-dot">.</span>
+        </a>
+
+        <!-- Tombol hamburger untuk tampilan mobile -->
+        <button
+          class="navbar__toggle"
+          id="navToggle"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <!-- Tiga garis ikon hamburger dibuat murni dengan CSS -->
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Menu navigasi utama -->
+        <nav class="navbar__menu" id="navMenu" role="navigation">
+          <ul class="navbar__list">
+            <li><a href="index.html" class="navbar__link active">Beranda</a></li>
+            <li><a href="menu.html" class="navbar__link">Menu</a></li>
+            <li><a href="cart.html" class="navbar__link">Keranjang</a></li>
+            <li><a href="admin.html" class="navbar__link">Admin</a></li>
+          </ul>
+        </nav>
+
+        <!-- Ikon keranjang dengan badge jumlah item -->
+        <a href="cart.html" class="navbar__cart" aria-label="Lihat keranjang belanja">
+          <!-- Ikon cart SVG inline agar tidak perlu dependensi eksternal -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <!-- Badge ini diupdate oleh script.js berdasarkan localStorage -->
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+
+      </div>
+    </header>
+
+
+    <!-- =============================================
+         MAIN: Konten utama halaman
+         ============================================= -->
+    <main>
+
+      <!-- -----------------------------------------------
+           SECTION 1: HERO BANNER
+           Bagian pertama yang dilihat pengunjung
+           ----------------------------------------------- -->
+      <section class="hero" id="hero" aria-label="Hero banner Hawamo Coffee">
+
+        <!-- Overlay gelap untuk kontras teks di atas gambar/background -->
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <!-- Efek partikel dekoratif — lingkaran floating dari CSS animation -->
+        <div class="hero__particles" aria-hidden="true">
+          <span class="particle particle--1"></span>
+          <span class="particle particle--2"></span>
+          <span class="particle particle--3"></span>
+          <span class="particle particle--4"></span>
+        </div>
+
+        <div class="hero__content container">
+          <!-- Kalimat kecil pembuka di atas heading utama -->
+          <p class="hero__eyebrow">☕ Kopi Pilihan dari Tanah Jambi</p>
+
+          <!-- Heading utama dengan emphasis italic -->
+          <h1 class="hero__title">
+            Secangkir <em>Kehangatan</em><br />
+            yang Selalu Dinantikan
+          </h1>
+
+          <!-- Deskripsi singkat brand -->
+          <p class="hero__subtitle">
+            Hawamo menghadirkan pengalaman kopi otentik dengan biji pilihan
+            dari kebun lokal Jambi — disajikan penuh cinta, dinikmati penuh rasa.
+          </p>
+
+          <!-- CTA (Call-to-Action): tombol utama dan sekunder -->
+          <div class="hero__actions">
+            <a href="menu.html" class="btn btn--primary">Pesan Sekarang</a>
+            <a href="#about" class="btn btn--ghost">Kenali Kami</a>
+          </div>
+        </div>
+
+        <!-- Indikator scroll ke bawah (animasi bounce CSS) -->
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <span class="scroll-arrow">↓</span>
+        </div>
+
+      </section>
+
+
+      <!-- -----------------------------------------------
+           SECTION 2: ABOUT US
+           Cerita singkat tentang Hawamo
+           ----------------------------------------------- -->
+      <section class="about" id="about" aria-label="Tentang Hawamo Coffee">
+        <div class="container">
+
+          <!-- Grid 2 kolom: teks kiri, visual kanan -->
+          <div class="about__grid">
+
+            <!-- Kolom kiri: narasi brand -->
+            <div class="about__text">
+              <span class="section-tag">Tentang Kami</span>
+              <h2 class="section-title">Lebih dari Sekadar<br />Tempat Ngopi</h2>
+              <p class="about__lead">
+                Hawamo lahir dari kecintaan mendalam pada budaya kopi Jambi.
+                Nama "Hawamo" terinspirasi dari kata Melayu Jambi yang bermakna
+                <em>kehangatan kebersamaan</em>.
+              </p>
+              <p class="about__body">
+                Sejak 2019, kami menyajikan kopi single origin dari kebun-kebun
+                kecil di Kerinci dan Muaro Bungo. Setiap cangkir adalah cerita
+                petani lokal yang bekerja dengan dedikasi penuh.
+              </p>
+
+              <!-- Statistik pencapaian brand -->
+              <div class="about__stats">
+                <div class="stat">
+                  <strong class="stat__number">5+</strong>
+                  <span class="stat__label">Tahun Berdiri</span>
+                </div>
+                <div class="stat">
+                  <strong class="stat__number">30+</strong>
+                  <span class="stat__label">Varian Menu</span>
+                </div>
+                <div class="stat">
+                  <strong class="stat__number">10k+</strong>
+                  <span class="stat__label">Pelanggan Setia</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom kanan: visual dekoratif berbasis CSS (tanpa gambar eksternal) -->
+            <div class="about__visual" aria-hidden="true">
+              <div class="visual-card visual-card--back">
+                <div class="visual-card__label">Single Origin</div>
+                <div class="visual-card__origin">Kerinci, Jambi</div>
+              </div>
+              <div class="visual-card visual-card--front">
+                <!-- Ilustrasi cangkir kopi sederhana dari CSS shapes -->
+                <div class="css-cup">
+                  <div class="css-cup__body">
+                    <div class="css-cup__steam">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <div class="css-cup__handle"></div>
+                  <div class="css-cup__saucer"></div>
+                </div>
+                <p class="visual-card__tagline">"Satu tegukan, seribu cerita."</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- -----------------------------------------------
+           SECTION 3: MENU UNGGULAN
+           Menampilkan 3 produk terbaik sebagai preview
+           ----------------------------------------------- -->
+      <section class="featured" id="featured" aria-label="Menu unggulan Hawamo">
+        <div class="container">
+
+          <!-- Header section -->
+          <div class="section-header">
+            <span class="section-tag">Menu Unggulan</span>
+            <h2 class="section-title">Yang Paling Dicintai<br />Pelanggan Kami</h2>
+            <p class="section-desc">
+              Tiga pilihan terbaik yang selalu habis duluan — pastikan kamu mencobanya.
+            </p>
+          </div>
+
+          <!-- Grid kartu menu unggulan (3 kolom di desktop, 1 di mobile) -->
+          <div class="featured__grid" id="featuredGrid">
+            <!-- Kartu menu akan di-render oleh script.js dari data featuredItems -->
+            <!-- Jika JS dinonaktifkan, konten fallback tetap tersedia -->
+          </div>
+
+          <!-- CTA menuju halaman menu lengkap -->
+          <div class="featured__cta">
+            <a href="menu.html" class="btn btn--primary btn--lg">
+              Lihat Semua Menu
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- -----------------------------------------------
+           SECTION 4: TESTIMONIAL / QUOTE BANNER
+           Kutipan inspiratif sebagai pemisah visual
+           ----------------------------------------------- -->
+      <section class="quote-banner" aria-label="Kutipan Hawamo">
+        <div class="container">
+          <blockquote class="quote">
+            <p class="quote__text">
+              "Di Hawamo, kamu tidak hanya membeli kopi —<br />
+              kamu membeli momen yang tidak terlupakan."
+            </p>
+            <footer class="quote__author">
+              — Rizky Pratama, Founder Hawamo Coffee
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+
+      <!-- -----------------------------------------------
+           SECTION 5: MENGAPA MEMILIH KAMI?
+           Nilai-nilai / keunggulan Hawamo
+           ----------------------------------------------- -->
+      <section class="values" aria-label="Keunggulan Hawamo Coffee">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-tag">Kenapa Hawamo?</span>
+            <h2 class="section-title">Kami Berbeda karena<br />Kami Peduli</h2>
+          </div>
+
+          <!-- Grid 3 kartu nilai (icon + judul + deskripsi) -->
+          <div class="values__grid">
+
+            <article class="value-card">
+              <!-- Ikon dekoratif dari emoji (tidak perlu library ikon) -->
+              <div class="value-card__icon" aria-hidden="true">🌿</div>
+              <h3 class="value-card__title">Bahan Lokal Terpilih</h3>
+              <p class="value-card__desc">
+                Semua biji kopi kami bersumber langsung dari petani
+                lokal Jambi tanpa perantara.
+              </p>
+            </article>
+
+            <article class="value-card">
+              <div class="value-card__icon" aria-hidden="true">🤝</div>
+              <h3 class="value-card__title">Ramah & Hangat</h3>
+              <p class="value-card__desc">
+                Suasana yang bersahabat membuat kamu merasa seperti
+                sedang di rumah sendiri.
+              </p>
+            </article>
+
+            <article class="value-card">
+              <div class="value-card__icon" aria-hidden="true">⚡</div>
+              <h3 class="value-card__title">Pesan Cepat & Mudah</h3>
+              <p class="value-card__desc">
+                Sistem pemesanan digital kami memastikan kopimu tersaji
+                tepat waktu tanpa antri.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- =============================================
+         FOOTER: Informasi kontak dan navigasi bawah
+         ============================================= -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+
+        <!-- Grid footer: 3 kolom di desktop -->
+        <div class="footer__grid">
+
+          <!-- Kolom 1: Identitas brand -->
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              Hawamo<span class="logo-dot">.</span>
+            </a>
+            <p class="footer__tagline">
+              Secangkir kehangatan yang selalu dinantikan,
+              di jantung kota Jambi.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Navigasi cepat -->
+          <nav class="footer__nav" aria-label="Navigasi footer">
+            <h4 class="footer__heading">Navigasi</h4>
+            <ul class="footer__list">
+              <li><a href="index.html" class="footer__link">Beranda</a></li>
+              <li><a href="menu.html" class="footer__link">Menu</a></li>
+              <li><a href="cart.html" class="footer__link">Keranjang</a></li>
+              <li><a href="admin.html" class="footer__link">Admin</a></li>
+            </ul>
+          </nav>
+
+          <!-- Kolom 3: Informasi kontak dengan alamat fiktif di Jambi -->
+          <address class="footer__contact">
+            <h4 class="footer__heading">Hubungi Kami</h4>
+            <ul class="footer__list">
+              <!-- Alamat fiktif di Jambi yang realistis -->
+              <li>
+                <span aria-label="Alamat">📍</span>
+                Jl. Sultan Thaha No. 42, Pasar Jambi,<br />
+                Kota Jambi, Jambi 36111
+              </li>
+              <li>
+                <span aria-label="Telepon">📞</span>
+                <a href="tel:+6274112233" class="footer__link">(0741) 112-233</a>
+              </li>
+              <li>
+                <span aria-label="Email">✉️</span>
+                <a href="mailto:halo@hawamocoffee.id" class="footer__link">
+                  halo@hawamocoffee.id
+                </a>
+              </li>
+              <li>
+                <span aria-label="Jam buka">🕐</span>
+                Setiap Hari, 07.00 – 22.00 WIB
+              </li>
+            </ul>
+          </address>
+
+        </div>
+
+        <!-- Garis pemisah dan copyright -->
+        <div class="footer__bottom">
+          <p class="footer__copy">
+            &copy; 2025 Hawamo Coffee. Dibuat dengan ☕ di Jambi.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+
+    <!-- =============================================
+         SCRIPT: Diletakkan sebelum </body> agar DOM
+         sudah tersedia saat script dijalankan
+         ============================================= -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
