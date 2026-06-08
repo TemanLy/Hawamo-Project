@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Viewport responsif untuk semua ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Menu Hawamo Coffee — Kopi, Non-Kopi, dan Camilan pilihan dari Jambi" />
+    <title>Menu | Hawamo Coffee</title>
+
+    <!-- Google Fonts: sama dengan index.html untuk konsistensi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Satu file CSS global untuk semua halaman -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="page-menu">
+
+    <!-- =============================================
+         NAVBAR: Sama persis di semua halaman
+         ============================================= -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner container">
+
+        <a href="index.html" class="navbar__logo" aria-label="Hawamo Coffee Beranda">
+          Hawamo<span class="logo-dot">.</span>
+        </a>
+
+        <!-- Tombol hamburger untuk tampilan mobile -->
+        <button
+          class="navbar__toggle"
+          id="navToggle"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="navbar__menu" id="navMenu" role="navigation">
+          <ul class="navbar__list">
+            <li><a href="index.html" class="navbar__link">Beranda</a></li>
+            <!-- Link "Menu" diberi class active karena ini halaman aktif -->
+            <li><a href="menu.html" class="navbar__link active">Menu</a></li>
+            <li><a href="cart.html" class="navbar__link">Keranjang</a></li>
+            <li><a href="admin.html" class="navbar__link">Admin</a></li>
+          </ul>
+        </nav>
+
+        <!-- Badge keranjang diperbarui otomatis oleh script.js -->
+        <a href="cart.html" class="navbar__cart" aria-label="Lihat keranjang belanja">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+
+      </div>
+    </header>
+
+
+    <!-- =============================================
+         MAIN: Konten utama halaman menu
+         ============================================= -->
+    <main>
+
+      <!-- -----------------------------------------------
+           PAGE HEADER: Banner atas halaman menu
+           Background gelap earthy sebagai identitas visual
+           ----------------------------------------------- -->
+      <section class="page-header" aria-label="Judul halaman menu">
+        <div class="container">
+          <p class="page-header__tag">☕ Katalog Produk</p>
+          <h1 class="page-header__title">Menu Hawamo Coffee</h1>
+          <p class="page-header__desc">
+            Temukan minuman dan camilan favoritmu — semua disajikan dengan cinta dari Jambi.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- -----------------------------------------------
+           SECTION: KATALOG MENU
+           Berisi filter kategori + grid kartu produk
+           ----------------------------------------------- -->
+      <section class="menu-page" aria-label="Katalog menu">
+        <div class="container">
+
+          <!-- Filter Bar: Tombol pilih kategori
+               Setiap tombol memiliki data-filter yang dibaca oleh script.js
+               script.js → initFilterBar() → setFilter() → renderMenuPage() -->
+          <div
+            class="filter-bar"
+            role="group"
+            aria-label="Filter kategori menu"
+          >
+            <!-- Tombol "Semua" aktif secara default saat halaman dimuat -->
+            <button
+              class="filter-btn active"
+              data-filter="semua"
+              aria-pressed="true"
+            >
+              🍽️ Semua
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="kopi"
+              aria-pressed="false"
+            >
+              ☕ Kopi
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="non-kopi"
+              aria-pressed="false"
+            >
+              🍵 Non-Kopi
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="camilan"
+              aria-pressed="false"
+            >
+              🍞 Camilan
+            </button>
+          </div>
+
+          <!-- Grid Menu: Diisi sepenuhnya oleh script.js
+               script.js → renderMenuPage() akan meng-inject HTML kartu
+               ke dalam elemen ini berdasarkan filter aktif -->
+          <div
+            class="menu-grid"
+            id="menuGrid"
+            role="list"
+            aria-label="Daftar menu"
+            aria-live="polite"
+          >
+            <!-- Konten di-render oleh JavaScript (renderMenuPage) -->
+            <!-- aria-live="polite": screen reader membaca perubahan konten -->
+
+            <!-- Skeleton loading placeholder: ditampilkan sebelum JS selesai -->
+            <div class="menu-card" style="opacity:0.4;pointer-events:none" aria-hidden="true">
+              <div class="menu-card__image" style="background:var(--clr-fog)"></div>
+              <div class="menu-card__body">
+                <div style="height:20px;background:var(--clr-fog);border-radius:4px;margin-bottom:8px"></div>
+                <div style="height:14px;background:var(--clr-fog);border-radius:4px;margin-bottom:4px"></div>
+                <div style="height:14px;background:var(--clr-fog);border-radius:4px;width:70%"></div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Akhir #menuGrid -->
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- =============================================
+         FOOTER: Sama persis di semua halaman
+         ============================================= -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Identitas brand -->
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              Hawamo<span class="logo-dot">.</span>
+            </a>
+            <p class="footer__tagline">
+              Secangkir kehangatan yang selalu dinantikan,
+              di jantung kota Jambi.
+            </p>
+          </div>
+
+          <!-- Navigasi footer -->
+          <nav class="footer__nav" aria-label="Navigasi footer">
+            <h4 class="footer__heading">Navigasi</h4>
+            <ul class="footer__list">
+              <li><a href="index.html" class="footer__link">Beranda</a></li>
+              <li><a href="menu.html"  class="footer__link">Menu</a></li>
+              <li><a href="cart.html"  class="footer__link">Keranjang</a></li>
+              <li><a href="admin.html" class="footer__link">Admin</a></li>
+            </ul>
+          </nav>
+
+          <!-- Informasi kontak dengan alamat fiktif Jambi -->
+          <address class="footer__contact">
+            <h4 class="footer__heading">Hubungi Kami</h4>
+            <ul class="footer__list">
+              <li>
+                <span aria-label="Alamat">📍</span>
+                Jl. Sultan Thaha No. 42, Pasar Jambi,<br />
+                Kota Jambi, Jambi 36111
+              </li>
+              <li>
+                <span aria-label="Telepon">📞</span>
+                <a href="tel:+6274112233" class="footer__link">(0741) 112-233</a>
+              </li>
+              <li>
+                <span aria-label="Email">✉️</span>
+                <a href="mailto:halo@hawamocoffee.id" class="footer__link">halo@hawamocoffee.id</a>
+              </li>
+              <li>
+                <span aria-label="Jam buka">🕐</span>
+                Setiap Hari, 07.00 – 22.00 WIB
+              </li>
+            </ul>
+          </address>
+
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">&copy; 2025 Hawamo Coffee. Dibuat dengan ☕ di Jambi.</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Script diletakkan di akhir body agar DOM sudah siap -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
