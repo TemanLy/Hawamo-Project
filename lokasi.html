@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lokasi outlet Hawamo Coffee di Thehok Kota Jambi, Rimbo Bujang Tebo, dan Sipin Kota Jambi." />
+    <title>Lokasi Outlet | Hawamo Coffee</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="page-lokasi">
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner container">
+        <a href="index.html" class="navbar__logo" aria-label="Hawamo Coffee Beranda">Hawamo<span class="logo-dot">.</span></a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+          <span class="navbar__toggle-lines" aria-hidden="true">
+            <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+          </span>
+        </button>
+        <nav class="navbar__menu" id="navMenu" aria-label="Navigasi utama">
+          <ul class="navbar__list">
+            <li><a href="index.html" class="navbar__link">Beranda</a></li>
+            <li><a href="menu.html" class="navbar__link">Menu</a></li>
+            <li><a href="lokasi.html" class="navbar__link active" aria-current="page">Lokasi</a></li>
+            <li><a href="tentang.html" class="navbar__link">Tentang</a></li>
+          </ul>
+        </nav>
+        <a href="menu.html" class="btn btn--primary btn--sm navbar__cta">Lihat Menu</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header" aria-label="Judul halaman lokasi">
+        <div class="container">
+          <p class="page-header__tag">📍 Outlet Hawamo</p>
+          <h1 class="page-header__title">Tiga titik hangat di Jambi dan Tebo.</h1>
+          <p class="page-header__desc">Arahkan kursor atau fokuskan keyboard ke pin peta untuk melihat foto outlet, deskripsi, jam buka, fasilitas, dan akses rute.</p>
+        </div>
+      </section>
+
+      <section class="location-section" aria-label="Peta outlet Hawamo">
+        <div class="container">
+          <div class="location-layout">
+            <div class="map-card reveal">
+              <div class="map-card__header">
+                <div>
+                  <h2>Peta Wilayah Sumatera</h2>
+                  <p>Ilustrasi peta interaktif. Pin menunjukkan area outlet Hawamo.</p>
+                </div>
+                <span class="badge badge--success">Interactive</span>
+              </div>
+
+              <div class="map-shell" aria-label="Ilustrasi peta Sumatera dengan pin lokasi outlet">
+                <svg class="sumatra-svg" viewBox="0 0 560 760" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="sumatraGradient" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#9a7a50" />
+                      <stop offset=".48" stop-color="#c9a976" />
+                      <stop offset="1" stop-color="#7d6f4f" />
+                    </linearGradient>
+                    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#2c1a0e" flood-opacity=".18" />
+                    </filter>
+                  </defs>
+                  <path filter="url(#softShadow)" fill="url(#sumatraGradient)" stroke="rgba(44,26,14,.22)" stroke-width="3" d="M163 23c35 10 65 39 88 71 35 49 55 105 91 154 34 47 86 77 118 126 38 58 56 132 45 199-7 45-31 91-72 108-35 15-74 2-105-18-42-27-70-70-101-109-34-43-77-79-103-127-24-45-32-98-50-146-16-42-47-79-50-124-3-45 17-92 50-121 25-22 57-23 89-13z"/>
+                  <path fill="rgba(253,248,240,.26)" d="M185 88c32 26 47 65 64 102 17 39 49 67 72 103 28 42 39 93 62 138 14 27 37 51 39 82 3 32-15 60-38 80-9 8-20 15-32 17 22-29 23-67 9-101-20-51-55-96-86-140-31-43-47-94-74-139-24-39-55-73-78-113-10-17-14-39 0-54 23-9 45 11 62 25z"/>
+                </svg>
+
+                <span class="map-region-label map-region-label--sumbar">Sumbar</span>
+                <span class="map-region-label map-region-label--riau">Riau</span>
+                <span class="map-region-label map-region-label--jambi">Jambi</span>
+                <span class="map-region-label map-region-label--sumsel">Sumsel</span>
+
+                <button class="map-pin map-pin--rimbo" type="button" data-outlet="rimbo-bujang" aria-label="Lihat Hawamo Rimbo Bujang" aria-pressed="false"><span>2</span></button>
+                <button class="map-pin map-pin--thehok" type="button" data-outlet="thehok" aria-label="Lihat Hawamo Thehok" aria-pressed="true"><span>1</span></button>
+                <button class="map-pin map-pin--sipin" type="button" data-outlet="sipin" aria-label="Lihat Hawamo Sipin" aria-pressed="false"><span>3</span></button>
+              </div>
+            </div>
+
+            <aside class="outlet-panel reveal" id="outletPanel" aria-live="polite" aria-label="Detail outlet terpilih">
+              <div class="outlet-panel__body">
+                <h2>Memuat detail outlet...</h2>
+                <p>Mohon tunggu sebentar.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="outlet-list-section" aria-label="Daftar outlet Hawamo">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag">Cabang Hawamo</span>
+            <h2 class="section-title">Pilih outlet sesuai suasana yang kamu butuhkan.</h2>
+            <p class="section-desc">Klik kartu outlet untuk memperbarui panel detail di atas. Setiap kartu juga menyediakan akses cepat menuju rute Google Maps.</p>
+          </div>
+
+          <div class="outlet-list" id="outletList"></div>
+        </div>
+      </section>
+
+      <section class="contact-strip-section" aria-label="Hubungi outlet Hawamo">
+        <div class="container">
+          <div class="contact-strip reveal">
+            <div>
+              <span class="section-tag">Butuh rekomendasi?</span>
+              <h2>Hubungi outlet sebelum datang.</h2>
+              <p>Fitur tambahan: setiap outlet punya tombol WhatsApp, rute Google Maps, salin alamat, status jam buka, dan daftar fasilitas agar pengunjung cepat mengambil keputusan.</p>
+            </div>
+            <a href="menu.html" class="btn btn--ghost btn--lg">Cek Menu Dulu</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">Hawamo<span class="logo-dot">.</span></a>
+            <p class="footer__tagline">Kopi khas Jambi, ruang yang hangat, dan cerita yang selalu punya tempat untuk pulang.</p>
+          </div>
+          <nav class="footer__nav" aria-label="Navigasi footer">
+            <h4 class="footer__heading">Navigasi</h4>
+            <ul class="footer__list">
+              <li><a href="index.html" class="footer__link">Beranda</a></li>
+              <li><a href="menu.html" class="footer__link">Menu</a></li>
+              <li><a href="lokasi.html" class="footer__link">Lokasi</a></li>
+              <li><a href="tentang.html" class="footer__link">Tentang</a></li>
+            </ul>
+          </nav>
+          <address class="footer__contact">
+            <h4 class="footer__heading">Hubungi Kami</h4>
+            <ul class="footer__list">
+              <li>📍 Thehok, Sipin, dan Rimbo Bujang</li>
+              <li>📞 <a href="tel:+6281234001101" class="footer__link">+62 812-3400-1101</a></li>
+              <li>✉️ <a href="mailto:halo@hawamocoffee.id" class="footer__link">halo@hawamocoffee.id</a></li>
+              <li>🕐 Setiap hari mulai 07.00 WIB</li>
+            </ul>
+          </address>
+        </div>
+        <div class="footer__bottom"><p class="footer__copy">&copy; <span id="yearNow">2026</span> Hawamo Coffee. Dibuat dengan ☕ di Jambi.</p></div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
