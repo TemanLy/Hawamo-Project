@@ -50,24 +50,11 @@
         <nav class="navbar__menu" id="navMenu" role="navigation">
           <ul class="navbar__list">
             <li><a href="index.html" class="navbar__link active">Beranda</a></li>
+            <li><a href="tentang.html" class="navbar__link">Tentang</a></li>
             <li><a href="menu.html" class="navbar__link">Menu</a></li>
-            <li><a href="cart.html" class="navbar__link">Keranjang</a></li>
-            <li><a href="admin.html" class="navbar__link">Admin</a></li>
+            <li><a href="lokasi.html" class="navbar__link">lokasi</a></li>
           </ul>
         </nav>
-
-        <!-- Ikon keranjang dengan badge jumlah item -->
-        <a href="cart.html" class="navbar__cart" aria-label="Lihat keranjang belanja">
-          <!-- Ikon cart SVG inline agar tidak perlu dependensi eksternal -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <path d="M16 10a4 4 0 01-8 0"/>
-          </svg>
-          <!-- Badge ini diupdate oleh script.js berdasarkan localStorage -->
-          <span class="cart-badge" id="cartBadge">0</span>
-        </a>
-
       </div>
     </header>
 
